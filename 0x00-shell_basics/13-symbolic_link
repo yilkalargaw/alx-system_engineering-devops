@@ -1,0 +1,2 @@
+#! /usr/bin/bash
+ln -s /bin/ls $PWD/_ls_
