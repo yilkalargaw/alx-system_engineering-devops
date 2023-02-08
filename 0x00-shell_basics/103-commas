@@ -1,2 +1,2 @@
 #!/bin/bash
-(IN=$(ls -a | sort | xargs echo); echo ${IN// /", "})
+ls -a | sort | tr "\n" ","
