@@ -1,2 +1,2 @@
-#! /usr/bin/bash
+#!/bin/bash
 (IN=$(ls -a | sort | xargs echo); echo ${IN// /", "})
