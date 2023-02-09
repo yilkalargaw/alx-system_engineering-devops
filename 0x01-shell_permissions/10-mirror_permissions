@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod $(chmod olleh) hello
+chmod $( ls -lad olleh | cut -c 2-10 ) hello
