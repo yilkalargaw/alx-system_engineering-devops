@@ -1,2 +1,2 @@
 #!/bin/bash
-chown --from-user=guillaume betty
+chown --from=guillaume betty
