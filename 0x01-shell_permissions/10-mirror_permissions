@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod $( ls -lad olleh | cut -c 2-10 ) hello
+chmod $(stat --format '%a' olleh) hello
