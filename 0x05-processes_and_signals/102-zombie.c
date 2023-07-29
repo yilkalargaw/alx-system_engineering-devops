@@ -18,14 +18,14 @@ int continous_while(void)
 /**
  * infinite_while - prevents process from ending to make it a zombie
  * @pcout: process cout
- *  
+ *
  * Return: nothing
  */
 
 void created_zombies(int pcout)
 {
 	pid_t child;
-	int i=0;
+	int i = 0;
 
 	for (; i < 5; i++)
 	{
