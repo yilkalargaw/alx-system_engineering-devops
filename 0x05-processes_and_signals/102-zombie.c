@@ -16,26 +16,28 @@ int continous_while(void)
 
 
 /**
- * create_zombies - prevents process from ending to make it a zombie
+ * infinite_while - prevents process from ending to make it a zombie
  * @pcout: process cout
- *
+ *  
  * Return: nothing
  */
 
-void create_zombies(int pcout)
+void created_zombies(int pcout)
 {
 	pid_t child;
-	int i = 0;
+	int i=0;
 
-	for (; i < 5; i++)
+	for (; i < pcout; i++)
 	{
 		child = fork();
-		if (child <= 0)
-			exit(0);
-		else
+		if (child > 0)
+		{
 			printf("Zombie process created, PID: %d\n", child);
+			sleep(50);
+		}
+		else
+			exit(0);
 	}
-	exit(0);
 }
 
 /**
@@ -45,7 +47,8 @@ void create_zombies(int pcout)
  */
 int main(void)
 {
-	create_zombies(5);
-	continous_while();
+	created_zombiess(5);
+	infinite_while();
 	return (0);
 }
+xsxs
