@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # print some messages with signals
 pgrep -f 100-process_and_pid_file > /var/run/holbertonscript.pid
+echo $$ > $file
 trap "echo 'I hate the kill command'; rm -f /var/run/myscript.pid; exit" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
 trap "rm -f /var/run/myscript.pid; exit" SIGQUIT
-while true;
+while :
 do
 	echo "To infinity and beyond"
+	sleep 2
 done
