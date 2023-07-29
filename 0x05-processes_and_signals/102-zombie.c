@@ -48,4 +48,3 @@ int main(void)
 	continous_while();
 	return (0);
 }
-xsxs
