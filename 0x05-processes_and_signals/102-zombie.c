@@ -45,7 +45,7 @@ void create_zombies(int pcout)
 int main(void)
 {
 	created_zombiess(5);
-	infinite_while();
+	continous_while();
 	return (0);
 }
 xsxs
