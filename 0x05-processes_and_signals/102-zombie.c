@@ -35,6 +35,7 @@ void create_zombies(int pcout)
 		else
 			printf("Zombie process created, PID: %d\n", child);
 	}
+	exit(0);
 }
 
 /**
