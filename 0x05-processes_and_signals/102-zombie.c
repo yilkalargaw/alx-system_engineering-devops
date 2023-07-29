@@ -16,16 +16,16 @@ int continous_while(void)
 
 
 /**
- * infinite_while - prevents process from ending to make it a zombie
+ * create_zombies - prevents process from ending to make it a zombie
  * @pcout: process cout
  *  
  * Return: nothing
  */
 
-void created_zombies(int pcout)
+void create_zombies(int pcout)
 {
-	pid_t child;
-	int i=0;
+	pid_t child = fork();
+	int i = 0;
 
 	for (; i < pcout; i++)
 	{
@@ -47,7 +47,7 @@ void created_zombies(int pcout)
  */
 int main(void)
 {
-	created_zombiess(5);
+	create_zombies(5);
 	infinite_while();
 	return (0);
 }
