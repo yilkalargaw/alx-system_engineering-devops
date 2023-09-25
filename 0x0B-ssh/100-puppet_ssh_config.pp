@@ -2,16 +2,14 @@
 
 include stdlib
 
-file_line { 'Configure SSH':
+file_line { 'Configure identityfile':
   path    => '/etc/ssh/ssh_config',
   line    => 'IdentityFile ~/.ssh/school'
-  replace => true,
   ensure => present,
 }
 
-file_line { 'Configure SSH':
+file_line { 'Configure password authentication to no':
   path    => '/etc/ssh/ssh_config',
   line    => 'PasswordAuthentication no',
-  replace => true,
   ensure => present,
 }
