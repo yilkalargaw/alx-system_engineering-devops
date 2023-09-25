@@ -1,5 +1,4 @@
-class { 'stdlib':
-}
+include stdlib
 
 file_line { 'Configure SSH':
   path    => '/etc/ssh/ssh_config',
@@ -8,3 +7,5 @@ file_line { 'Configure SSH':
     'PasswordAuthentication no',
   ],
   replace => true,
+  ensure => present,
+}
