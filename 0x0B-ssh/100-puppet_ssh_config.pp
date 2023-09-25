@@ -1,3 +1,5 @@
+# set up a client SSH configuration
+
 file_line { 'Configure SSH':
   path    => '/etc/ssh/ssh_config',
   lines   => [
