@@ -4,10 +4,14 @@ include stdlib
 
 file_line { 'Configure SSH':
   path    => '/etc/ssh/ssh_config',
-  lines   => [
-    'IdentityFile ~/.ssh/school',
-    'PasswordAuthentication no',
-  ],
+  line    => 'IdentityFile ~/.ssh/school'
+  replace => true,
+  ensure => present,
+}
+
+file_line { 'Configure SSH':
+  path    => '/etc/ssh/ssh_config',
+  line    => 'PasswordAuthentication no',
   replace => true,
   ensure => present,
 }
