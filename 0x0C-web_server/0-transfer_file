@@ -12,7 +12,7 @@ server_username=$3
 ssh_key_path=$4
 
 if [[ -z "$ssh_key_path" ]]; then
-  ssh_key_path="~/.ssh/id_rsa"
+  ssh_key_path="$HOME/.ssh/id_rsa"
 fi
 
-scp -i "$ssh_key_path" -o StrictHostKeyChecking=no "$file_path" "$server_username@$server_ip":~/
+scp -i "$ssh_key_path" -o StrictHostKeyChecking=no "$file_path" "$server_username@$server_ip":"$HOME"/
