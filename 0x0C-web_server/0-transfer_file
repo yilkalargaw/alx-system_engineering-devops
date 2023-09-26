@@ -14,4 +14,4 @@ if [[ -z "$ssh_key_path" ]]; then
   ssh_key_path="$HOME/.ssh/id_rsa"
 fi
 
-scp -i "$ssh_key_path" -o StrictHostKeyChecking=no "$file_path" "$server_username@$server_ip":"$HOME"/
+scp -i "$ssh_key_path" -o StrictHostKeyChecking=no "$file_path" "$server_username@$server_ip":~/
