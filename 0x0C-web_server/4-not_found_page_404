@@ -5,7 +5,7 @@ sudo apt-get update # && sudo apt-get dist-upgrade -y
 sudo apt-get -y install nginx
 sudo service nginx start
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+sudo cp --backup=numbered /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 tmp="error_page 404 /404.html;\nlocation = /404.html {\n\troot /usr/share/nginx/html;\n\tinternal;\n}"
 sudo sed -i "27i $tmp" /etc/nginx/sites-available/default
 sudo service nginx restart
