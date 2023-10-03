@@ -1,0 +1,17 @@
+sudo apt-get -y update && sudo apt-get dist-upgrade -y
+sudo apt-get -y install haproxy
+sudo cp --backup=numbered /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+sudo cp --backup=numbered /etc/default/haproxy /etc/default/haproxy.bak
+cat << EOF > /etc/haproxy/haproxy.cfg
+frontend yilkal-frontend
+  bind *:80
+  mode http
+  default_backend yilkal-backend
+backend yilkal-backend
+  balance roundrobin
+  server 268879-web-01 100.25.103.83:80 check
+  server 268879-web-02 54.174.209.240:80 check
+EOF
+
+# Enable Haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
