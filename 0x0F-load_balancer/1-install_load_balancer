@@ -3,7 +3,7 @@ sudo apt-get -y update && sudo apt-get dist-upgrade -y
 sudo apt-get -y install haproxy
 sudo cp --backup=numbered /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 sudo cp --backup=numbered /etc/default/haproxy /etc/default/haproxy.bak
-cat << EOF > /etc/haproxy/haproxy.cfg
+sudo tee /etc/haproxy/haproxy.cfg << EOF
 frontend yilkal-frontend
   bind *:80
   mode http
