@@ -11,7 +11,7 @@ frontend http
   timeout client 30s
   timeout server 30s
   timeout connect 5s
-  default_backend yilkal-backend
+  default_backend webserver
 backend webserver
   balance roundrobin
   timeout client 30s
