@@ -5,14 +5,14 @@ sudo apt-get -y install haproxy
 sudo cp --backup=numbered /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 sudo cp --backup=numbered /etc/default/haproxy /etc/default/haproxy.bak
 sudo tee /etc/haproxy/haproxy.cfg << EOF
-frontend yilkal-frontend
+frontend http
   bind *:80
   mode http
   timeout client 30s
   timeout server 30s
   timeout connect 5s
   default_backend yilkal-backend
-backend yilkal-backend
+backend webserver
   balance roundrobin
   timeout client 30s
   timeout server 30s
